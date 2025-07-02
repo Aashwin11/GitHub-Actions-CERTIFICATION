@@ -3,19 +3,19 @@ name: Conditons Lab
 on: [push]
 
 jobs:
-  Print Hello World:
+  Print_Hello_World:
     if: github.repository=="octo-org/octo-repo-prod"
     runs-on: ubuntu-latest
 
     steps:
-    - name: Hello World
+    - name: Hello_World
       run: |
         echo "Hello World" 
   
-  Goodbye Moon:
+  Goodbye_Moon:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Goodbye Moon Print
+      - name: Goodbye_Moon_Print
         run: |
           echo "Goodbye Moon "
