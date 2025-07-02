@@ -3,7 +3,7 @@ name: Webhook Lab
 on:
   repository_dispatch:
     types:
-      - Webhook
+      - webhook
 
 jobs:
   respond-to-dispatch:
