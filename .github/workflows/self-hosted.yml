@@ -1,0 +1,15 @@
+name: Self Hosted RUnner
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  Self_hosted_try:
+    runs-on: self-hosted
+
+    steps:
+      - name: Run trial
+        run: echo "Hello wolrd"
+
