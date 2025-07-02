@@ -8,10 +8,11 @@ on:
 jobs:
   my-context:
     runs-on: ubuntu-latest
-    env:
-          MY_ACTION: ${{github.action}}
+    
     steps:
       - name: "My Step"
         run: echo "Hello! $MY_ACTION"
+        env:
+          MY_ACTION: ${{github.action}}
 
         
