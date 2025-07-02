@@ -12,6 +12,7 @@ jobs:
     steps:
       - name : Checkout Repo
         uses: actions/checkout@v4
+        s
 
       - name : Run a script
         run: |  
