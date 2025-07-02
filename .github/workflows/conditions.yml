@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   Print_Hello_World:
-    if: github.repository == 'octo-org/octo-repo-prod'
+    if: github.repository == 'Aashwin11/GitHub-Actions-CERTIFICATION'
     runs-on: ubuntu-latest
 
     steps:
