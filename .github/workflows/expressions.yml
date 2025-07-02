@@ -38,6 +38,8 @@ jobs:
 
       - name: Job success 
         if: ${{success()}}
+        run: echo "Success"
 
       - name: Job success 
         if: ${{failure()}}
+        run: echo "Failure"
