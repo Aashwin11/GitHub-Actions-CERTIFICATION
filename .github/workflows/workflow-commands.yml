@@ -11,9 +11,17 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - name: "Group logging"
+            - name: "Step -1 Grouping"
               run: |
                 echo "::group::My group MEssage"
                 echo "Msg1"
                 echo "Msg2"
                 echo "::endgroup::"
+
+            - name : "Step -2 Add Variable to Github Env"
+              run: |
+                echo "var1=hello">> $GITHUB_ENV
+
+            - name: "Step 3 check variable exists or not"
+              run: |
+                echo $var1
