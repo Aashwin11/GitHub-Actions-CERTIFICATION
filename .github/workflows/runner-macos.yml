@@ -1,0 +1,31 @@
+name: MacOS_GH_Runner
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  buidl-and-test:
+
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name : Create Swift File
+        run: |
+          echo 'print("hellow from Swift")' > hello.swift
+
+      - name: Install swiftlint
+        run: |
+          brew install swiftlint
+      
+      - name : Run swiftlint 
+        run: swiftlint
+
+      - name : Complie and run swift
+        run: |
+          swiftc hello.swift
+          ./hello
