@@ -10,7 +10,8 @@ jobs:
 
     steps:
       - name: Check if the string contains substring
-        run: contains ('shallow','sh')
+        if: contains ('shallow','sh')
+        run: echo "It does contain the substring"
 
       - name: Starts with string
         if: startsWith ('shallow','sh')
