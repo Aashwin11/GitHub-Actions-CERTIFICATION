@@ -1,0 +1,43 @@
+name: Expression Lab
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Expression-functions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check if the string contains substring
+        run: contains ('shallow','sh')
+
+      - name: Starts with string
+        if: startsWith ('shallow','sh')
+        run: echo "String starts with sh"     
+      - name: Ends with string
+        if: endsWith ('shallow','sh') 
+        run: echo"String ends with sh"               
+
+      - name: CFormat String
+        run: echo ${{format('Hello {0} {1} {2}','shallow','world','comes')}}    
+           
+
+      # - name: Join the array
+      #   if: github.event_name == 'issues'
+      #   run: echo " Issues labelled:  ${{ join(github.event.issue.labels.*.name,',') }} "
+
+      - name: Change to JSON
+        run: echo " Job To JSON ${{toJSON (github.job)}}" 
+
+      - name: Chagne from JSON
+        run: echo "Paresed JSON :${{fromJSON('{"hello":"world"}').hello }}"
+
+      - name: Hash Files
+        run: echo " HAsh Files : ${{hashFiles ('**/package-lock.json', '**/Gemfile.lock') }}
+
+      - name: Job success 
+        if: ${{success()}}
+
+      - name: Job success 
+        if: ${{failure()}}
