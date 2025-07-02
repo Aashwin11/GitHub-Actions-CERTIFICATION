@@ -35,7 +35,7 @@ jobs:
         run: echo "Paresed JSON :${{fromJSON('{"hello":"world"}').hello }}"
 
       - name: Hash Files
-        run: "echo \" HAsh Files : ${{hashFiles ('**/package-lock.json', '**/Gemfile.lock')  }}"
+        run: "echo \" HAsh Files : ${{hashFiles ('**/package-lock.json', '**/Gemfile.lock')  }}\""
 
       - name: Job success 
         if: ${{success()}}
