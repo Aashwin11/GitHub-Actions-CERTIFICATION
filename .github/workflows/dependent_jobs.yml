@@ -1,0 +1,25 @@
+name: "Dependent Jobs LAb"
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    Job-2:
+        runs-on: ubuntu-latest
+        needs: Job-1
+
+        steps:
+        - name: "Step A"
+          run: |
+            echo "Hello"
+
+    Job-1:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: "Step B"
+              run: |
+                echo "World"
+        
